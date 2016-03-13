@@ -14,6 +14,40 @@
 
 <p class="lead">Ukážme že nám to nie je jedno! Voliči Mostu a Sieťe oslovte svojich poslancov a dajte im vedieť, že toto nechcete. Ukážte svoju silu aj tu a podpíšte túto výzvu (kľudne aj neverejne).</p>
 
+<%= form_for @vote do |f| %>
+  <% if @vote.errors.any? %>
+    <div class="alert alert-danger alert-block form-errors">
+      <ul>
+        <% @vote.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, "Meno" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :city, "Mesto" %>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, "Email (nepovinné)" %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :public %> Zverejniť podpis
+    </label>
+  </div>
+
+  <%= f.submit "Nie je mi to jedno!", class: "btn btn-primary" %>
+<% end %>
 
 <div class="row">
   <div class="col-md-4">
