@@ -1,0 +1,6 @@
+sk:
+  activerecord:
+    attributes:
+      vote:
+        name: Meno
+        city: Mesto
