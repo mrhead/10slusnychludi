@@ -14,7 +14,7 @@
 
 <p class="lead">Ukážme že nám to nie je jedno! Voliči Mostu a Sieťe oslovte svojich poslancov a dajte im vedieť, že toto nechcete. Ukážte svoju silu aj tu a podpíšte túto výzvu (kľudne aj neverejne).</p>
 
-<%= form_for @vote do |f| %>
+<%= form_for @vote, url: { action: :create, anchor: "new_vote" }  do |f| %>
   <% if @vote.errors.any? %>
     <div class="alert alert-danger alert-block form-errors">
       <ul>
