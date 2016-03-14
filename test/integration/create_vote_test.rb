@@ -4,7 +4,7 @@ class CreateVoteTest < ActionDispatch::IntegrationTest
   test "create new vote" do
     visit root_path
 
-    fill_in "Meno", with: "John Doe"
+    fill_in "Celé meno", with: "John Doe"
     fill_in "Mesto", with: "Bratislava"
     fill_in "Email", with: "john.doe@example.com"
     check "Zverejniť podpis"
