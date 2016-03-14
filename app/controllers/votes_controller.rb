@@ -37,6 +37,12 @@ class VotesController < ApplicationController
             current_state: :good,
             fb_link: 'https://www.facebook.com/machackovak',
         },
+        {
+            name: 'Simona Petrík',
+            party: 'SIEŤ',
+            current_state: :good,
+            fb_link: 'https://www.facebook.com/SimonaPetrik/',
+        },
 
 
         # dont_know - most
@@ -137,12 +143,6 @@ class VotesController < ApplicationController
             party: 'SIEŤ',
             current_state: :dont_know,
             fb_link: 'https://www.facebook.com/martin.fedor.SIET',
-        },
-        {
-            name: 'Simona Petrík',
-            party: 'SIEŤ',
-            current_state: :dont_know,
-            fb_link: 'https://www.facebook.com/SimonaPetrik/',
         },
 
 
