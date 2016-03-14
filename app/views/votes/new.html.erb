@@ -68,7 +68,13 @@
           <tr>
             <td class="name"><%= p.fetch(:name) %></td>
             <td class="party"><%= p.fetch(:party) %></td>
-            <td class="action"><a href="<%= p.fetch(:fb_link) %>" target="_blank">poďakuj za slušnosť</a></td>
+            <td class="action">
+              <% if p.fetch(:fb_link).present? %>
+                <a href="<%= p.fetch(:fb_link) %>" target="_blank">poďakuj za slušnosť</a>
+              <% else %>
+                &nbsp;
+              <% end %>
+            </td>
           </tr>
         <% end %>
         </tbody>
@@ -87,7 +93,13 @@
           <tr>
             <td class="name"><%= p.fetch(:name) %></td>
             <td class="party"><%= p.fetch(:party) %></td>
-            <td class="action"><a href="<%= p.fetch(:fb_link) %>" target="_blank">presvedč ma</a></td>
+            <td class="action">
+            <% if p.fetch(:fb_link).present? %>
+              <a href="<%= p.fetch(:fb_link) %>" target="_blank">presvedč ma</a>
+            <% else %>
+              &nbsp;
+            <% end %>
+            </td>
           </tr>
         <% end %>
         </tbody>
@@ -106,7 +118,13 @@
           <tr>
             <td class="name"><%= p.fetch(:name) %></td>
             <td class="party"><%= p.fetch(:party) %></td>
-            <td class="action"><a href="<%= p.fetch(:fb_link) %>" target="_blank">skús zmeniť môj názor</a></td>
+            <td class="action">
+              <% if p.fetch(:fb_link).present? %>
+                <a href="<%= p.fetch(:fb_link) %>" target="_blank">skús zmeniť môj názor</a>
+              <% else %>
+                &nbsp;
+              <% end %>
+            </td>
           </tr>
         <% end %>
         </tbody>
