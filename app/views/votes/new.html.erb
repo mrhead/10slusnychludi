@@ -1,6 +1,7 @@
-<h1>Stačí presvedčiť 10 slušných poslancov a vláda SMERu nebude</h1>
+<h1>Už <%= Vote.count %> ľudí hľadá 10 slušných poslancov</h1>
 
-<p class="lead">Presne toľko slušných poslancov môže zmeniť charakter a budúcnosť nášho Slovenska. <strong>10 slušných ľudí</strong> môže rozhodnúť o tom, že 3. <strong>vláda Roberta Fica nebude existovať</strong>.</p>
+<p class="lead">Stačí presvedčiť <strong>10 poslancov a vláda SMERu nebude</strong>. Presvedčiť ich môžeme <strong>len my</strong>. <strong>Spoločne</strong>.<br/>
+  <a href="#current-state" class="btn btn-success">Napíš poslancovi</a></p>
 
 <p class="lead">Smer a SNS <strong>majú teraz 64 mandátov</strong> a na získanie väčšiny im <strong>chýba ešte 12 poslancov</strong>. Most-Híd a Sieť majú spoločne 21 mandátov.</p>
 
@@ -31,7 +32,7 @@
 
 <%= render "form", vote: @vote %>
 
-<h3>Aktuálny stav (chýba 8 slušných ľudí)</h3>
+<h3 id="current-state">Aktuálny stav (chýba 8 slušných ľudí)</h3>
 
 <hr>
 
