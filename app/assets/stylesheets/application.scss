@@ -42,3 +42,17 @@ form {
     border: 1px solid $state-danger-text;
   }
 }
+
+.table {
+  .name {
+    width: 33%;
+  }
+  .party {
+    width: 33%;
+    text-align: center;
+  }
+  .action {
+    width: 33%;
+    text-align: center;
+  }
+}

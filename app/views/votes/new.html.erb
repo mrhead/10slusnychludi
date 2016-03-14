@@ -68,45 +68,83 @@
 
 <hr>
 
+<%
+
+  thanks = 'poďakuj za slušnosť'
+  persuade = 'presveč ho'
+  try = 'skús zmeniť jeho názor'
+
+  people = [
+      {
+          name: '',
+          party: '',
+          link: '',
+
+      }
+         ]
+%>
+
 <div class="row">
-  <div class="col-md-4">
-    <h4>Slušní poslanci (2)</h4>
-    <ul class="list-unstyled">
-      <li>Miroslav Beblavý SIEŤ</li>
-      <li>Katarína Macháčková SIEŤ</li>
-    </ul>
-  </div>
-  <div class="col-md-4">
-    <h4>Možní slusní poslanci (18)</h4>
-    <ul class="list-unstyled">
-      <li>Lucia Žitňanská MOST-HÍD</li>
-      <li>Zsolt Simon MOST-HÍD</li>
-      <li>László Sólymos OST-HÍD</li>
-      <li>František Šebej MOST-HÍD</li>
-      <li>Ivan Švejna MOST-HÍD</li>
-      <li>Gábor Gál MOST-HÍD</li>
-      <li>Tibor Bastrnák MOST-HÍD</li>
-      <li>Peter Kresák MOST-HÍD</li>
-      <li>Arpád Érsek MOST-HÍD</li>
-      <li>Elemér Jaka MOST-HÍD</li>
-      <li>Andrej Hrnčiar SIEŤ</li>
-      <li>Katarína Macháčková SIEŤ</li>
-      <li>Alena Bašistová SIEŤ</li>
-      <li>Katarína Cséfalvayová SIEŤ</li>
-      <li>Eduard Adamčík SIEŤ</li>
-      <li>Igor JanckulíkSIEŤ</li>
-      <li>Martin Fedor SIEŤ</li>
-      <li>Simona Petrík SIEŤ</li>
-    </ul>
-  </div>
-  <div class="col-md-4">
-    <h4>Sklamali nás (2)</h4>
-    <ul class="list-unstyled">
-      <li>Béla Bugár MOST-HÍD</li>
-      <li>Radoslav Procházka SIEŤ</li>
-    </ul>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <%
+      good = @people.select{ |p| p.fetch(:current_state) == :good }
+      %>
+      <div class="panel-heading"><h4>Slušní poslanci (<%= good.count %>)</h4></div>
+
+      <table class="table table-hover">
+        <tbody>
+        <% good.each do |p| %>
+          <tr>
+            <td class="name"><%= p.fetch(:name) %></td>
+            <td class="party"><%= p.fetch(:party) %></td>
+            <td class="action"><a href="<%= p.fetch(:fb_link) %>" target="_blank">poďakuj za slušnosť</a></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel panel-default">
+      <%
+        dont_know = @people.select{ |p| p.fetch(:current_state) == :dont_know }
+      %>
+      <div class="panel-heading"><h4>Poslanci, ktorí môžu podporiť slušnosť (<%= dont_know.count %>)</h4></div>
+
+      <table class="table table-hover">
+        <tbody>
+        <% dont_know.each do |p| %>
+          <tr>
+            <td class="name"><%= p.fetch(:name) %></td>
+            <td class="party"><%= p.fetch(:party) %></td>
+            <td class="action"><a href="<%= p.fetch(:fb_link) %>" target="_blank">presvedč ma</a></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel panel-default">
+      <%
+        not_good = @people.select{ |p| p.fetch(:current_state) == :not_good }
+      %>
+      <div class="panel-heading"><h4>Sklamali nás (<%= not_good.count %>)</h4></div>
+
+      <table class="table table-hover">
+        <tbody>
+        <% not_good.each do |p| %>
+          <tr>
+            <td class="name"><%= p.fetch(:name) %></td>
+            <td class="party"><%= p.fetch(:party) %></td>
+            <td class="action"><a href="<%= p.fetch(:fb_link) %>" target="_blank">skús zmeniť môj názor</a></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
 
 <hr>
 
