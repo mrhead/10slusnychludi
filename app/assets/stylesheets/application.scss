@@ -16,11 +16,19 @@
 @import "bootstrap";
 
 body {
-  padding: 50px 10px;
+  padding: 20px 10px;
 }
 
 h1 {
+  margin-top: 20px;
   margin-bottom: 30px;
+
+  &.title {
+    text-align: center;
+  }
+  span {
+    font-weight: normal;
+  }
 }
 
 h2, h3, h4 {
