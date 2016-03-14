@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   before_action :load_people
+  before_action :load_votes
 
   def new
     @vote = Vote.new
@@ -165,5 +166,9 @@ class VotesController < ApplicationController
             fb_link: 'https://www.facebook.com/ahrnciar',
         },
     ]
+  end
+
+  def load_votes
+    @votes = Vote.visible.order(id: :desc).limit(210)
   end
 end

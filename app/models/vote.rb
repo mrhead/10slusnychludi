@@ -3,4 +3,6 @@ class Vote < ActiveRecord::Base
 
   validates :name, :city, presence: true
   validates :email, format: { with: VALID_EMAIL_REGEX, allow_blank: true }
+
+  scope :visible, -> { where(public: true) }
 end

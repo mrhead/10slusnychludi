@@ -21,6 +21,7 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug"
+  gem "faker"
 end
 
 group :development do
