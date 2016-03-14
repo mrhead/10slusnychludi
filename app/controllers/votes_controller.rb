@@ -8,6 +8,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.new(vote_params)
+    @vote.ip = request.remote_ip
 
     if verify_recaptcha(model: @vote, message: "Prosím potvrďte, že nie ste robot") && @vote.save
       redirect_to root_path, notice: "Váš hlas bol započítaný! Ďakujeme, že Vám to nie je jedno!"
