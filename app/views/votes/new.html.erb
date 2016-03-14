@@ -29,40 +29,7 @@
 
 <h3>Podpíš výzvu "10 slušných ľudí"</h3>
 
-<%= form_for @vote, url: { action: :create, anchor: "new_vote" }  do |f| %>
-  <% if @vote.errors.any? %>
-    <div class="alert alert-danger alert-block form-errors">
-      <ul>
-        <% @vote.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :name, "Meno" %>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :city, "Mesto" %>
-    <%= f.text_field :city, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email, "Email (nepovinné)" %>
-    <%= f.text_field :email, class: "form-control" %>
-  </div>
-
-  <div class="checkbox">
-    <label>
-      <%= f.check_box :public %> Zverejniť podpis
-    </label>
-  </div>
-
-  <%= f.submit "Nie je mi to jedno!", class: "btn btn-primary" %>
-<% end %>
+<%= render "form", vote: @vote %>
 
 <h3>Aktuálny stav (chýba 8 slušných ľudí)</h3>
 

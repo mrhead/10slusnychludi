@@ -14,7 +14,7 @@ gem "puma"
 gem "rails-i18n"
 gem "rollbar", "~> 2.8.1"
 gem "sass-rails", "~> 5.0"
-gem "turbolinks"
+gem "turbolinks", "~> 5.0.0.beta"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
