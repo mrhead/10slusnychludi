@@ -4,7 +4,6 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
-    # force commit
   end
 
   def create
