@@ -72,6 +72,9 @@
         <tbody>
         <% good.each do |p| %>
           <tr>
+            <td class="poslanci poslanec--<%= p.fetch(:party).chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s %>-<%= p.fetch(:number) %>">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="<%= p.fetch(:name) %>">
+            </td>
             <td class="name"><%= p.fetch(:name) %></td>
             <td class="party"><%= p.fetch(:party) %></td>
             <td class="action">
