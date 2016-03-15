@@ -263,6 +263,7 @@ class VotesController < ApplicationController
   end
 
   def load_votes
-    @votes = Vote.visible.order(id: :desc).limit(300)
+    @votes = Vote.visible.correct.order(id: :desc).limit(300)
+    @vote_count = Vote.visible.correct.count
   end
 end
