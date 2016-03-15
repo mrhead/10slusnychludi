@@ -34,5 +34,7 @@
     <%= recaptcha_tags stoken: false, hl: :sk, ajax: true %>
   </div>
 
-  <%= f.submit "Pridaj môj podpis!", class: "btn btn-primary", data: { disable_with: "Spracovávam..." } %>
+  <div class="form-group text-center">
+    <%= f.submit "Pridaj môj podpis!", class: "btn btn-primary", data: { disable_with: "Spracovávam..." } %>
+  </div>
 <% end %>

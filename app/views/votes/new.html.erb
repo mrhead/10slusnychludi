@@ -1,12 +1,10 @@
-<div style="text-align: center;">
-  <%= image_tag "logo.png" %>
+<h1 class="title">Už <span><%= number_with_delimiter @vote_count %></span> ľudí hľadá<br/><span>10</span> slušných poslancov</span></h1>
+
+<div id="fb-wrapper">
+  <div class="fb-like" data-href="https://www.facebook.com/10-slu%C5%A1n%C3%BDch-%C4%BEud%C3%AD-583570575124900/?fref=ts" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </div>
 
-<h1 class="title">Už <%= number_with_delimiter @vote_count %> ľudí hľadá <br/><span>10 slušných poslancov</span></h1>
-
-<div class="fb-like" data-href="https://www.facebook.com/10-slu%C5%A1n%C3%BDch-%C4%BEud%C3%AD-583570575124900/?fref=ts" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-
-<p class="lead"><strong>Stačí presvedčiť 10 poslancov a vláda SMERu nebude</strong>. Presvedčiť ich môžeme len my. Spoločne.</p>
+<p class="lead first-pg"><strong>Stačí presvedčiť 10 poslancov a vláda SMERu nebude</strong>. Presvedčiť ich môžeme len my. Spoločne.</p>
 
 <p class="lead">Smer a SNS majú teraz 64 mandátov a na získanie väčšiny im chýba ešte 12 poslancov. Most-Híd a Sieť majú spoločne 21 mandátov.</p>
 
@@ -20,16 +18,16 @@
 
 <p class="lead">Títo slušní ľudia sa rozhodli, že vládu Smeru nepodporia:</p>
 
-<ul>
-  <li>Miroslav Beblavý (Sieť)</li>
-  <li>Katarína Macháčková (Sieť)</li>
-  <li>Simona Petrík (Sieť)</li>
-  <li>Zsolt Simon (Most-Híd)</li>
+<ul class="list-unstyled text-center">
+  <li><strong>Miroslav Beblavý</strong> (Sieť)</li>
+  <li><strong>Katarína Macháčková</strong> (Sieť)</li>
+  <li><strong>Simona Petrík</strong> (Sieť)</li>
+  <li><strong>Zsolt Simon</strong> (Most-Híd)</li>
 </ul>
 
 <h3>Hľadáme už len 6 slušných ľudí. Pomôž ich nájsť!</h3>
 
-<ol>
+<ol class="text-center">
   <li>Podpíš výzvu "10 slušných ľudí"</li>
   <li>Napíš nižšie uvedeným poslancom, prečo by nemali podporiť novú vládu Smeru</li>
   <li>Daj nám Like na <a href="https://www.facebook.com/10-slu%C5%A1n%C3%BDch-%C4%BEud%C3%AD-583570575124900/" target="_blank" title="10 slušných ľudí">Facebooku</a> <div class="fb-like" data-href="https://www.facebook.com/10-slu%C5%A1n%C3%BDch-%C4%BEud%C3%AD-583570575124900/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>
@@ -39,11 +37,13 @@
 
 <h3>Podpíš výzvu "10 slušných ľudí"</h3>
 
-<%= render "form", vote: @vote %>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10 col-xs-12">
+    <%= render "form", vote: @vote %>
+  </div>
+</div>
 
 <h3 id="current-state">Aktuálny stav (chýba 6 slušných ľudí)</h3>
-
-<hr>
 
 <%
 
@@ -172,7 +172,7 @@
 
 <hr>
 
-<h3>Prečo je ďalšia vláda Smeru najhoršia možnosť pre Slovensko?</h3>
+<h2>Prečo je ďalšia vláda Smeru najhoršia možnosť pre Slovensko?</h2>
 
 <ol>
   <li>Lebo pred voľbami nám jednotlivé strany a poslanci sľúbili, že so Smerom do vlády nepôjdu. A sľuby sa majú plniť.</li>
@@ -187,7 +187,7 @@
 </ol>
 
 
-<h3>Výzvu podpísali aj (najnovších 300 podpisov)</h3>
+<h2>Výzvu podpísali aj (najnovších 300 podpisov)</h2>
 
 <% cache Vote.last do %>
   <ul class="signs">
